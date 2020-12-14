@@ -7,8 +7,14 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,10 +26,29 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span id="title">tweeter</span>
+      <div id="sub-title">
+        <div><strong>Write</strong> a new tweet</div>
+      </div>
+      
     </nav>
+    
+    <!-- Header (fixed) -->
+    <header>
+      <div>
+          <img src="./images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2><strong>Amy</strong> <span>Mansell</span></h2>
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quam non voluptatum. Aperiam accusamus consequatur vitae nihil suscipit repellat dolorem voluptate laudantium iste provident ullam itaque enim eveniet consectetur, quas cumque molestiae maiores vero est laborum ad cupiditate sunt! Atque.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, alias perferendis? Ipsa ex ab, incidunt, corporis at in ad accusamus distinctio, eveniet ullam excepturi quae?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aliquam optio delectus laborum earum sint ex iure maxime, ipsam neque fugiat cupiditate commodi odit, quidem praesentium voluptate totam distinctio. Culpa laudantium delectus autem quasi labore blanditiis, repellat suscipit eum, modi placeat, laborum alias deleniti sequi in vel assumenda nulla saepe neque rem. Ad, veniam dolorum. Molestias quisquam laborum architecto dolorum! Repellat voluptates in eum corporis.</p>
+    </main>
   </body>
 </html>
