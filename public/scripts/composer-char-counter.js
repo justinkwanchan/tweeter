@@ -1,5 +1,9 @@
 $(document).ready(function() {
   $("#tweet-text").on('input', function (event) {
-    console.log($(this).val().length);
-  })
+    const charCount = 140 - $(this).val().length;
+    $(this)
+      .siblings()
+      .children('.counter')
+      .text(charCount);
+  });
 });
