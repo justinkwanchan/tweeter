@@ -1,0 +1,39 @@
+main > section > h2 {
+  margin-block-start: 0.5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-text {
+  background-color: #f4f1ec;
+  border-width: 0 0 4px 0;
+  margin-bottom: 0.7em;
+  height: 1.7em;
+  resize: none;
+  outline: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#button-count {
+  display:flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: 'bungee', sans-serif;
+  font-size: 26px;
+  background-color: rgb(45, 45, 255);
+  color: white;
+  text-shadow: 3px 4px 5px black;
+  padding: 0.2em 0.5em;
+}
+
+output {
+  font-family: 'Bungee', sans-serif;
+  font-size: 30px;
+}
+
