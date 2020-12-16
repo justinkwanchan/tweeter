@@ -48,6 +48,7 @@ article {
   margin-top: 3em;
   border-style: solid;
   border-width: 4px;
+  margin-bottom: 2em;
 }
 
 article > header {
@@ -70,6 +71,7 @@ article > header > div {
 
 .handle {
   color: #a5a5a5;
+  visibility: hidden;
 }
 
 article > p {
@@ -124,4 +126,12 @@ article > footer {
   background-repeat: no-repeat;
   width: 0.7em;
   height: 0.7em;
+}
+
+.hvr-box-shadow-outset:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hvr-box-shadow-outset:hover .handle {
+  visibility: visible;
 }
