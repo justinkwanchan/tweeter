@@ -63,16 +63,34 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  /**
+   * Loops through tweets
+   * Calls createTweetElement for each tweet
+   * Takes return value and appends it to the tweets container
+   */
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-    
     tweets.forEach(element => {
       const $newTweet = createTweetElement(element)[0];
       $('#tweets-container').prepend($newTweet);
-    });
-  }
+    })
+  };
+    
+  $('#tweet-form').on('submit', function(event) {
+    event.preventDefault();
+    console.log($(this).serialize());
+    
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: $(this).serialize()
+    })
+    .then(function (data) {
+      $('#tweets-container').prepend(data);
+    })
+    .catch(error => console.log(error));
+  });
+
+  
 
   // $(document).on('dblclick', function (event) {
   //   console.log(createTweetElement(data[0])[0]);
