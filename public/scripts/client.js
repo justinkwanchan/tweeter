@@ -74,6 +74,7 @@ $(document).ready(function() {
       })
       .then(function (data) {
         $('#tweets-container').append(data);
+        loadTweets();
       })
       .catch(error => console.log(error));
     }
