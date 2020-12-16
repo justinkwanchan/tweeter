@@ -7,6 +7,13 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
+  // Function for escaping any user input that will be sent to server
+  const escape =  function(str) {
+    const htmlTag = document.createElement('div');
+    htmlTag.appendChild(document.createTextNode(str));
+    return htmlTag.innerHTML;
+  };
+  
   const createTweetElement = function (tweet) {
     const $tweet = $(`
       <article class="hvr-box-shadow-outset">
@@ -15,14 +22,14 @@ $(document).ready(function() {
             <div>
               <img src="${tweet.user.avatars}">
             </div>
-            <span>${tweet.user.name}</span>
+            <span>${escape(tweet.user.name)}</span>
           </div>
           
-          <span class="handle">${tweet.user.handle}</span>
+          <span class="handle">${escape(tweet.user.handle)}</span>
         </header>
 
         <p>
-          ${tweet.content.text}
+          ${escape(tweet.content.text)}
         </p>
 
         <footer>
