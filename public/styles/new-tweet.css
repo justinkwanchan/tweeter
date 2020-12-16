@@ -63,11 +63,10 @@ article > header > div {
   align-items: center;
 }
 
-.avatar {
-  background-image: url("../images/Newton.png");
+/* .avatar {
   width: 67px;
   height: 58px;
-}
+} */
 
 .handle {
   color: #a5a5a5;
