@@ -7,31 +7,6 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
   const createTweetElement = function (tweet) {
     const $tweet = $(`
       <article class="hvr-box-shadow-outset">
@@ -69,34 +44,57 @@ $(document).ready(function() {
    * Takes return value and appends it to the tweets container
    */
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     tweets.forEach(element => {
       const $newTweet = createTweetElement(element)[0];
       $('#tweets-container').prepend($newTweet);
     })
   };
     
+  // Dynamically add multiple tweets to DOM
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
-    console.log($(this).serialize());
+    const charsRemaining = Number($(this).children('div').children('output').val());
+    console.log(charsRemaining);
+
+    const data = $(this).serialize();
     
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: $(this).serialize()
-    })
-    .then(function (data) {
-      $('#tweets-container').prepend(data);
-    })
-    .catch(error => console.log(error));
+    if (charsRemaining === 140) {
+      alert('Message field is empty');
+    } else if (charsRemaining < 0) {
+      alert('Over character limit');
+    } else {
+      $(this).children('textarea').val('');
+      $(this).children('div').children('output').val('140');
+
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: data
+      })
+      .then(function (data) {
+        $('#tweets-container').append(data);
+      })
+      .catch(error => console.log(error));
+    }
   });
 
-  
+  const loadTweets = () => {
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:8080/tweets'
+    })
+    .done((data) => {
+      renderTweets(data);
+    })
+    .fail((error) => console.log(error));
+  };
+
+  loadTweets();
 
   // $(document).on('dblclick', function (event) {
   //   console.log(createTweetElement(data[0])[0]);
   //   // renderTweets(data);
 
   // });
-  
-  renderTweets(data);
 });
