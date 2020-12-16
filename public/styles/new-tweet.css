@@ -40,3 +40,88 @@ output {
 .red {
   color: red;
 }
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: streth;
+  margin-top: 3em;
+  border-style: solid;
+  border-width: 4px;
+}
+
+article > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 1em 0.5em 0.5em;
+}
+
+article > header > div {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  background-image: url("../images/Newton.png");
+  width: 67px;
+  height: 58px;
+}
+
+.handle {
+  color: #a5a5a5;
+}
+
+article > p {
+  align-self: center;
+  width: 97%;
+  height: 2.5em;
+  font-weight: bold;
+  padding-left: 1em;
+  border-style: solid;
+  border-width: 0 0 4px 0;
+  margin-bottom: 0;
+}
+
+article > footer {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0.4em 0 1em;
+}
+
+.tweet-age {
+  font-size: smaller;
+  font-weight: bold;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 75px;
+}
+
+.flag {
+  background-image: url("../images/flag.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.7em;
+  height: 0.7em;
+}
+
+.share {
+  background-image: url("../images/share.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.7em;
+  height: 0.7em;
+}
+
+.like {
+  background-image: url("../images/like.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.7em;
+  height: 0.7em;
+}
