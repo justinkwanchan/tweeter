@@ -18,12 +18,6 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
-$(document).ready(function() {
-  $(document).on('dblclick', function (event) {
-    console.log(createTweetElement(tweetData)[0]); // to see what it looks like
-  });
-});
-
 const createTweetElement = function (tweet) {
   const $tweet = $(`
     <article class="hvr-box-shadow-outset">
@@ -54,5 +48,12 @@ const createTweetElement = function (tweet) {
   `);
   return $tweet;
 };
+
+$(document).ready(function() {
+  $(document).on('dblclick', function (event) {
+    console.log(createTweetElement(tweetData)[0]); // to see what it looks like
+    $('#tweets-container').append(createTweetElement(tweetData)[0]);
+  });
+});
 
 // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
