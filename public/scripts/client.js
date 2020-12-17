@@ -92,16 +92,31 @@ $(document).ready(function() {
     $(this).css('cursor', 'pointer');
   });
 
+  /**
+   * Toggle the message form with a click of a text
+   * Also empties the form and any error message, and resets the char counter
+   */
   $('#toggle-header').on('click', function(event) {
-    $(this)
+    const container = $(this)
       .parent()
       .parent()
       .siblings('.header-main-container')
-      .children('.container')
-      .children('.new-tweet')
-      .slideToggle('fast', function(){
-        $("#tweet-text").focus();
+      .children('.container');
+
+    const newTweet = container.children('.new-tweet');
+    const tweetText = newTweet.children('#tweet-form').children('#tweet-text');
+    const charsRemaining = tweetText.siblings('#button-count').children('.counter');
+    newTweet.slideToggle('fast', function() {
+        tweetText.focus();
+        tweetText.val('');
+        charsRemaining.val('140');
+        charsRemaining.removeClass('red');
     });
+
+    const errorMessage = container.children('.error-message');
+    if (errorMessage.is(":visible")) {
+      errorMessage.slideToggle('fast');
+    }
   });
 
   const loadTweets = () => {
