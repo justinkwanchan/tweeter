@@ -67,11 +67,11 @@ $(document).ready(function() {
 
     if (charsRemaining === 140) {
       errorMessage.text('❌ Message field is empty. ❌')
-      errorMessage.slideToggle('fast');
+      errorMessage.slideDown('fast');
       // errorMessage.slideDown(50, errorMessage.val('Mistake'));
     } else if (charsRemaining < 0) {
       errorMessage.text('❌ Sorry. Your message is too long. ❌')
-      errorMessage.slideToggle('fast');
+      errorMessage.slideDown('fast');
     } else {
       $(this).children('textarea').val('');
       $(this).children('div').children('output').val('140');
@@ -89,9 +89,15 @@ $(document).ready(function() {
     }
   });
 
-  $('#tweet-form').on('submit', function(event) {
+  $('#tweet-text').on('input', function(event) {
+    const errorMessage = $(this).parent().parent().siblings('#error-message');
+    const charCount = 140 - $(this).val().length;
+    console.log(charCount);
 
-  }
+    if (charCount >= 0 && charCount <= 140 && errorMessage.is(':visible')) {
+      errorMessage.slideUp('fast');
+    }
+  });
 
   const loadTweets = () => {
     $.ajax({
