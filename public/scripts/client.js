@@ -96,6 +96,15 @@ $(document).ready(function() {
       errorMessage.slideUp('fast');
     }
   });
+  
+  $('#toggle-header').on('click', function(event) {
+    const tweetForm = $(this)
+      .parent()
+      .parent()
+      .siblings('.container')
+      .children('.new-tweet');
+    tweetForm.slideToggle('fast');
+  });
 
   const loadTweets = () => {
     $.ajax({
