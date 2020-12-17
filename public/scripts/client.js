@@ -88,13 +88,17 @@ $(document).ready(function() {
     }
   });
 
-    $('#toggle-header').on('click', function(event) {
-    const tweetForm = $(this)
+  $('#toggle-header').on('mouseover', function(event) {
+    $(this).css('cursor', 'pointer');
+  });
+
+  $('#toggle-header').on('click', function(event) {
+    $(this)
       .parent()
       .parent()
       .siblings('.container')
-      .children('.new-tweet');
-    tweetForm.slideToggle('fast');
+      .children('.new-tweet')
+      .slideToggle('fast');
   });
 
   const loadTweets = () => {
