@@ -104,6 +104,12 @@ $(document).ready(function() {
       .siblings('.container')
       .children('.new-tweet');
     tweetForm.slideToggle('fast');
+
+    // if (tweetForm.is(':visible')) {
+    //   $(this).parent().parent().siblings('#user-header').animate({ 'margin-bottom': '2.2rem'}, 200);
+    // } else {
+    //   $(this).parent().parent().siblings('#user-header').animate({ 'margin-bottom': '0'}, 200);
+    // }
   });
 
   const loadTweets = () => {

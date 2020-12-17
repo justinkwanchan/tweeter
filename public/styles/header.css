@@ -1,5 +1,5 @@
-body > header {
-  margin-top: 120px;
+#user-header {
+  margin: 120px 0 2.2rem;
   display: flex;
   height: 400px;
   width: 100%;
@@ -10,12 +10,12 @@ body > header {
   padding-top: 0.5em;
 }
 
-header > div > h2 {
+#user-header > div > h2 {
   font-size: 46px;
   margin-block-start: 0.1em;
   color: white;
 }
 
-header > div > h2 > span {
+#user-header > div > h2 > span {
   font-weight:500;
 }
