@@ -98,7 +98,9 @@ $(document).ready(function() {
       .parent()
       .siblings('.container')
       .children('.new-tweet')
-      .slideToggle('fast');
+      .slideToggle('fast', function(){
+        $("#tweet-text").focus();
+    });
   });
 
   const loadTweets = () => {
