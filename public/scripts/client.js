@@ -14,7 +14,7 @@ $(document).ready(function() {
     return htmlTag.innerHTML;
   };
   
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = $(`
       <article class="hvr-box-shadow-outset">
         <header>
@@ -55,21 +55,21 @@ $(document).ready(function() {
     tweets.forEach(element => {
       const $newTweet = createTweetElement(element)[0];
       $('#tweets-container').prepend($newTweet);
-    })
+    });
   };
     
   // Dynamically add multiple tweets to DOM
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
     const charsRemaining = Number($(this).children('div').children('output').val());
-    const data = $(this).serialize();   
+    const data = $(this).serialize();
     const errorMessage = $(this).parent().siblings('#error-message');
 
     if (charsRemaining === 140) {
-      errorMessage.text('❌ Message field is empty. ❌')
+      errorMessage.text('❌ Message field is empty. ❌');
       errorMessage.slideDown('fast');
     } else if (charsRemaining < 0) {
-      errorMessage.text('❌ Sorry. Your message is too long. ❌')
+      errorMessage.text('❌ Sorry. Your message is too long. ❌');
       errorMessage.slideDown('fast');
     } else {
       $(this).children('textarea').val('');
@@ -80,11 +80,11 @@ $(document).ready(function() {
         url: '/tweets',
         data: data
       })
-      .then(function (data) {
-        $('#tweets-container').append(data);
-        loadTweets();
-      })
-      .catch(error => console.log(error));
+        .then(function(data) {
+          $('#tweets-container').append(data);
+          loadTweets();
+        })
+        .catch(error => console.log(error));
     }
   });
 
@@ -102,10 +102,10 @@ $(document).ready(function() {
       method: 'GET',
       url: 'http://localhost:8080/tweets'
     })
-    .done((data) => {
-      renderTweets(data);
-    })
-    .fail((error) => console.log(error));
+      .done((data) => {
+        renderTweets(data);
+      })
+      .fail((error) => console.log(error));
   };
 
   loadTweets();
