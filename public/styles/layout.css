@@ -41,9 +41,16 @@ body {
     width: 90%
   }
   
-  #user-header {
+  .header-container {
     flex-basis: 40%;
     margin: 0 7% 0 0;
+  }
+
+  #user-header {
+    position: fixed;
+    width: 33%;
+    margin: 0 0 0 0;
+    /* top: calc(120px + 5vw); */
   }
   
   .container {
