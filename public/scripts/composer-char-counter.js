@@ -20,7 +20,7 @@ $(document).ready(function() {
       counter.removeClass('red');
     }
 
-    const errorMessage = $(this).parent().parent().siblings('#error-message');
+    const errorMessage = $(this).parent().parent().siblings('.error-message');
 
     if (charCount >= 0 && charCount <= 140 && errorMessage.is(':visible')) {
       errorMessage.slideUp('fast');

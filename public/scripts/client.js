@@ -63,7 +63,7 @@ $(document).ready(function() {
     event.preventDefault();
     const charsRemaining = Number($(this).children('div').children('output').val());
     const data = $(this).serialize();
-    const errorMessage = $(this).parent().siblings('#error-message');
+    const errorMessage = $(this).parent().siblings('.error-message');
 
     if (charsRemaining === 140) {
       errorMessage.text('❌ Message field is empty. ❌');
