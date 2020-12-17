@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -38,33 +38,35 @@
       </div>
     </nav>
     
-    <!-- Header (fixed) -->
-    <header id='user-header'>
-      <div>
+    <div class="header-main-container">
+      <!-- Header (fixed) -->
+      <header id='user-header'>
+        <div>
           <img src="./images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
+        </div>
+        <br>
+        <div>
           <h2><strong>Amy</strong> <span>Mansell</span></h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <span class="error-message"></span>
-      <section class="new-tweet">
-        <form id="tweet-form" action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" autofocus></textarea>
-          <div id="button-count">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      <!-- New tweets added dynamically here -->
-      <section id="tweets-container"></section>
-    </main>
+        </div>
+      </header>
+      
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <span class="error-message"></span>
+        <section class="new-tweet">
+          <form id="tweet-form" action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" autofocus></textarea>
+            <div id="button-count">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        
+        <!-- New tweets added dynamically here -->
+        <section id="tweets-container"></section>
+      </main>
+    </div>
   </body>
 </html>
