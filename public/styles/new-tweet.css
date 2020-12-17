@@ -86,6 +86,7 @@ article > header > div {
 }
 
 article > p {
+  overflow-wrap: break-word;
   align-self: center;
   width: 97%;
   height: auto;

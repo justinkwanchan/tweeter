@@ -33,7 +33,7 @@ $(document).ready(function() {
         </p>
 
         <footer>
-          <span class="tweet-age">${tweet.created_at} days ago</span>
+          <span class="tweet-age">${new Date(tweet.created_at).toDateString()}</span>
           <div class="icons">
             <div class="flag"></div>
             <div class="share"></div>
@@ -68,7 +68,6 @@ $(document).ready(function() {
     if (charsRemaining === 140) {
       errorMessage.text('❌ Message field is empty. ❌')
       errorMessage.slideDown('fast');
-      // errorMessage.slideDown(50, errorMessage.val('Mistake'));
     } else if (charsRemaining < 0) {
       errorMessage.text('❌ Sorry. Your message is too long. ❌')
       errorMessage.slideDown('fast');
@@ -92,7 +91,6 @@ $(document).ready(function() {
   $('#tweet-text').on('input', function(event) {
     const errorMessage = $(this).parent().parent().siblings('#error-message');
     const charCount = 140 - $(this).val().length;
-    console.log(charCount);
 
     if (charCount >= 0 && charCount <= 140 && errorMessage.is(':visible')) {
       errorMessage.slideUp('fast');
@@ -111,10 +109,4 @@ $(document).ready(function() {
   };
 
   loadTweets();
-
-  // $(document).on('dblclick', function (event) {
-  //   console.log(createTweetElement(data[0])[0]);
-  //   // renderTweets(data);
-
-  // });
 });
