@@ -118,6 +118,7 @@ article > footer {
   display: flex;
   justify-content: space-between;
   width: 75px;
+  visibility: hidden;
 }
 
 .flag {
@@ -149,5 +150,9 @@ article > footer {
 }
 
 .hvr-box-shadow-outset:hover .handle {
+  visibility: visible;
+}
+
+.hvr-box-shadow-outset:hover .icons {
   visibility: visible;
 }
