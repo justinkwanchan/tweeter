@@ -4,7 +4,6 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
   // Function for escaping any user input that will be sent to server
@@ -15,6 +14,7 @@ $(document).ready(function() {
   };
   
   const createTweetElement = function(tweet) {
+    const newTime = moment(tweet.created_at).toNow(true);
     const $tweet = $(`
       <article class="hvr-box-shadow-outset">
         <header>
@@ -33,7 +33,7 @@ $(document).ready(function() {
         </p>
 
         <footer>
-          <span class="tweet-age">${new Date(tweet.created_at).toDateString()}</span>
+          <span class="tweet-age">${newTime} ago</span>
           <div class="icons">
             <div class="flag"></div>
             <div class="share"></div>
@@ -88,28 +88,13 @@ $(document).ready(function() {
     }
   });
 
-  $('#tweet-text').on('input', function(event) {
-    const errorMessage = $(this).parent().parent().siblings('#error-message');
-    const charCount = 140 - $(this).val().length;
-
-    if (charCount >= 0 && charCount <= 140 && errorMessage.is(':visible')) {
-      errorMessage.slideUp('fast');
-    }
-  });
-  
-  $('#toggle-header').on('click', function(event) {
+    $('#toggle-header').on('click', function(event) {
     const tweetForm = $(this)
       .parent()
       .parent()
       .siblings('.container')
       .children('.new-tweet');
     tweetForm.slideToggle('fast');
-
-    // if (tweetForm.is(':visible')) {
-    //   $(this).parent().parent().siblings('#user-header').animate({ 'margin-bottom': '2.2rem'}, 200);
-    // } else {
-    //   $(this).parent().parent().siblings('#user-header').animate({ 'margin-bottom': '0'}, 200);
-    // }
   });
 
   const loadTweets = () => {
