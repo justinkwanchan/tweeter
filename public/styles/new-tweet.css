@@ -1,18 +1,26 @@
+.error-message {
+  text-align: center;
+  border-style: solid;
+  border-color: red;
+  border-width: 4px;
+  margin-top: 1em;
+  padding: 0.5em 0;
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
 .new-tweet {
   margin-bottom: 2em;
 }
 
-main > section > h2 {
-  margin-block-start: 0.5em;
-}
-
 form {
   display: flex;
+  margin: 1.5em 0 0 0;
   flex-direction: column;
 }
 
 #tweet-form > label {
-  margin: 1.5em 0 0 0;
   font-size: 28px;
   font-weight: bold;
 }

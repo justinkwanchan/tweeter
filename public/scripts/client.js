@@ -62,14 +62,16 @@ $(document).ready(function() {
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
     const charsRemaining = Number($(this).children('div').children('output').val());
-    console.log(charsRemaining);
+    const data = $(this).serialize();   
+    const errorMessage = $(this).parent().siblings('#error-message');
 
-    const data = $(this).serialize();
-    
     if (charsRemaining === 140) {
-      alert('Message field is empty');
+      errorMessage.text('❌ Message field is empty. ❌')
+      errorMessage.slideToggle('fast');
+      // errorMessage.slideDown(50, errorMessage.val('Mistake'));
     } else if (charsRemaining < 0) {
-      alert('Over character limit');
+      errorMessage.text('❌ Sorry. Your message is too long. ❌')
+      errorMessage.slideToggle('fast');
     } else {
       $(this).children('textarea').val('');
       $(this).children('div').children('output').val('140');
@@ -86,6 +88,10 @@ $(document).ready(function() {
       .catch(error => console.log(error));
     }
   });
+
+  $('#tweet-form').on('submit', function(event) {
+
+  }
 
   const loadTweets = () => {
     $.ajax({
