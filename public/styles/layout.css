@@ -30,14 +30,15 @@ body {
 
  main {
    width: 90%;
+   /* align-self: center; */
  }
-
 
  /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   .header-main-container {
     margin-top: calc(120px + 5vw);
     display: flex;
+    flex-direction: row;
     width: 90%
   }
   
@@ -48,13 +49,12 @@ body {
 
   #user-header {
     position: fixed;
-    width: 33%;
+    width: 37%;
     margin: 0 0 0 0;
-    /* top: calc(120px + 5vw); */
   }
   
   .container {
     flex-basis: 60%;
-    padding-left: 7%;
+    padding-left: 3%;
   }
 }

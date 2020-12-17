@@ -96,7 +96,8 @@ $(document).ready(function() {
     $(this)
       .parent()
       .parent()
-      .siblings('.container')
+      .siblings('.header-main-container')
+      .children('.container')
       .children('.new-tweet')
       .slideToggle('fast', function(){
         $("#tweet-text").focus();
