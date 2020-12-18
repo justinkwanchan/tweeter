@@ -141,5 +141,7 @@ $(document).ready(function() {
     }
   });
 
+  autosize($("#tweet-text"));
+  
   loadTweets();
 });
