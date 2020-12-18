@@ -90,7 +90,6 @@ article > header > div {
 
 .handle {
   color: #a5a5a5;
-  visibility: hidden;
 }
 
 article > p {
@@ -155,10 +154,6 @@ article > footer {
 
 .hvr-box-shadow-outset:hover {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
-}
-
-.hvr-box-shadow-outset:hover .handle {
-  visibility: visible;
 }
 
 .hvr-box-shadow-outset:hover .icons {
