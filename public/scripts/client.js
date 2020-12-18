@@ -22,7 +22,7 @@ $(document).ready(function() {
         <header>
           <div>
             <div>
-              <img src="${tweet.user.avatars}">
+              <img src="${tweet.user.avatars}" alt="User avatar">
             </div>
             <span>${escape(tweet.user.name)}</span>
           </div>
