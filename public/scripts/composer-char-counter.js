@@ -3,10 +3,10 @@ $(document).ready(function() {
    * Event handler for typing in the text area
    * Dynamically updates the character-remaining count
    * Count is grey when 0 or above, red when negative
-   * 
+   *
    * Also removes the error message when the character count enter acceptable range
    */
-  $("#tweet-text").on('input', function(event) {
+  $("#tweet-text").on('input', function() {
     const charCount = 140 - $(this).val().length;
     const counter = $(this)
       .siblings()

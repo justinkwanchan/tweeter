@@ -6,6 +6,7 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
+
   // Function for escaping any user input that will be sent to server
   const escape =  function(str) {
     const htmlTag = document.createElement('div');
@@ -13,6 +14,7 @@ $(document).ready(function() {
     return htmlTag.innerHTML;
   };
   
+  // Create new markup with tweet data for introducing dynamically into the DOM
   const createTweetElement = function(tweet) {
     const newTime = moment(tweet.created_at).toNow(true);
     const $tweet = $(`
@@ -107,10 +109,10 @@ $(document).ready(function() {
     const tweetText = newTweet.children('#tweet-form').children('#tweet-text');
     const charsRemaining = tweetText.siblings('#button-count').children('.counter');
     newTweet.slideToggle('fast', function() {
-        tweetText.focus();
-        tweetText.val('');
-        charsRemaining.val('140');
-        charsRemaining.removeClass('red');
+      tweetText.focus();
+      tweetText.val('');
+      charsRemaining.val('140');
+      charsRemaining.removeClass('red');
     });
 
     const errorMessage = container.children('.error-message');
@@ -119,6 +121,7 @@ $(document).ready(function() {
     }
   });
 
+  // AJAX call to load the tweets dynamically on the page without refresh
   const loadTweets = () => {
     $.ajax({
       method: 'GET',
@@ -132,7 +135,7 @@ $(document).ready(function() {
 
   // Submit tweet by pressing enter
   $("#tweet-text").keypress(function(e) {
-    if (e.which == 13 && !e.shiftKey) {        
+    if (e.which === 13 && !e.shiftKey) {
       $(this).closest("form").submit();
       e.preventDefault();
     }
