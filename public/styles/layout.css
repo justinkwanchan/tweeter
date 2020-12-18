@@ -34,6 +34,13 @@ body {
 
  /* Desktop styles */
 @media only screen and (min-width: 1024px) {
+  nav {
+    position: fixed;
+    top: 0;
+    background-image: none;
+    background-color: #4056A1;
+  }
+  
   .header-main-container {
     margin-top: calc(120px + 5vw);
     display: flex;
@@ -47,6 +54,7 @@ body {
   }
 
   #user-header {
+    margin: 120px 0 2.2rem;
     position: fixed;
     width: 37%;
     margin: 0 0 0 0;

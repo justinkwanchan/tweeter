@@ -91,7 +91,7 @@ $(document).ready(function() {
   });
 
   // Change cursor icon to pointing hand when hovering over new tweet text or arrows
-  $('#toggle-header, #arrows').on('mouseover', function(event) {
+  $('#toggle-header, .fa-angle-double-down').on('mouseover', function(event) {
     $(this).css('cursor', 'pointer');
   });
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
    * Toggle the message form with a click of a text
    * Also empties the form and any error message, and resets the char counter
    */
-  $('#toggle-header, #arrows').on('click', function(event) {
+  $('#toggle-header, .fa-angle-double-down').on('click', function(event) {
     const container = $(this)
       .parents('nav')
       .siblings('.header-main-container')
