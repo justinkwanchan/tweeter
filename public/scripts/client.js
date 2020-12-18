@@ -88,7 +88,8 @@ $(document).ready(function() {
     }
   });
 
-  $('#toggle-header').on('mouseover', function(event) {
+  // Change cursor icon to pointing hand when hovering over new tweet text or arrows
+  $('#toggle-header, #arrows').on('mouseover', function(event) {
     $(this).css('cursor', 'pointer');
   });
 
@@ -96,10 +97,9 @@ $(document).ready(function() {
    * Toggle the message form with a click of a text
    * Also empties the form and any error message, and resets the char counter
    */
-  $('#toggle-header').on('click', function(event) {
+  $('#toggle-header, #arrows').on('click', function(event) {
     const container = $(this)
-      .parent()
-      .parent()
+      .parents('nav')
       .siblings('.header-main-container')
       .children('.container');
 
@@ -130,10 +130,11 @@ $(document).ready(function() {
       .fail((error) => console.log(error));
   };
 
-  $("#tweet-text").keypress(function (e) {
-    if(e.which == 13 && !e.shiftKey) {        
-        $(this).closest("form").submit();
-        e.preventDefault();
+  // Submit tweet by pressing enter
+  $("#tweet-text").keypress(function(e) {
+    if (e.which == 13 && !e.shiftKey) {        
+      $(this).closest("form").submit();
+      e.preventDefault();
     }
   });
 
