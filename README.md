@@ -14,9 +14,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-| !["The main mobile-sized page on start up with text field hidden"](https://github.com/justinkwanchan/tinyapp/blob/master/docs/startup.png?raw=true) | !["Showing the activated text field"](https://github.com/justinkwanchan/tinyapp/blob/master/docs/text-field.png?raw=true) |
+| !["The main mobile-sized page on start up with text field hidden"](https://github.com/justinkwanchan/tweeter/blob/master/docs/startup.png?raw=true) | !["Showing the activated text field"](https://github.com/justinkwanchan/tweeter/blob/master/docs/text-field.png?raw=true) |
 | ------------- |:-------------:|
-| !["Error message"](https://github.com/justinkwanchan/tinyapp/blob/master/docs/error-message.png?raw=true) | !["The page reformatted to desktop size"](https://github.com/justinkwanchan/tinyapp/blob/master/docs/desktop.png?raw=true) |
+| !["Error message"](https://github.com/justinkwanchan/tweeter/blob/master/docs/error-message.png?raw=true) | !["The page reformatted to desktop size"](https://github.com/justinkwanchan/tweeter/blob/master/docs/desktop.png?raw=true) |
 
 
 ## Dependencies
