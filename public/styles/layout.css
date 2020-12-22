@@ -63,5 +63,6 @@ body {
   .container {
     flex-basis: 60%;
     padding-left: 3%;
+    max-width: 56%
   }
 }
